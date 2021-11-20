@@ -1,0 +1,14 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "Movie Review Guessing Game",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wingbar",
+  "license": "ISC",
+  "dependencies": {
+    "omdb-api-pt": "^2.0.1"
+  }
+}

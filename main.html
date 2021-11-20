@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/jpg" href="images/library-favicon.png">
+  <link type="text/css" rel="stylesheet" href="css/styles.css">
+  <link type="text/css" rel="stylesheet" href="css/game.css">
+  <title>Movies</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body id="content">
+  
+    <header>
+    
+    </header>  
+ <div id="hideable">
+  <div id="side-form">
+    <form>
+      <div class='spacer'></div>
+      <div class="input-block">
+        <span class="placeholder">What's the movie title?</span><br><br>  
+        <input id="title" type="text" name="title" max='30'autocomplete="off" required></input>
+        <div class="validation-block">
+          <p class="validation-text title">Enter something please!</p>
+        </div>
+        
+      <div id= 'secondary-inputs'>
+      <div class="input-block" hidden>
+        <span class="placeholder">Who is the director?</span><br><br>      
+        <input id="name" type="text" name="name" autocomplete="off"></input>
+        <div class="validation-block">
+          <p class="validation-text name">Enter something please!</p>
+        </div>
+      </div>
+
+      <div class="input-block" hidden>
+        <span class="placeholder">How many minutes are in the movie?</span><br><br>
+        <input id="number" type="number" name="number" autocomplete="off"></input>
+        <div class="validation-block">
+          <p class="validation-text number">Enter a number, please!</p>
+        </div>
+      </div>
+      </div>
+
+      <label class="radio">
+        <span class="radio-input">
+          <input type="radio" id='radio-first' name="radio" class='rone'></input>
+          <span class="radio-control">
+          
+          </span>
+        </span>
+        
+        <span class="radio-label" value="" checked="checked" />I liked the movie</span><br>
+      </label>
+      <input type="radio" name="radio" id='radio-second' class='rtwo'></input>
+          <span class="radio-control">   
+          
+        </span>
+        <span class="radio-label">I disliked the movie</span>
+            <div class="validation-block">
+          <p class="validation-text number">Click something please!</p>
+        </div>
+    
+</form>
+
+<br><input id="content-checkbox" type="checkbox" hidden></input>
+
+       <span id ='check' class='checkbox-label' hidden>Click to manually input info</span>
+       </div>
+    <footer id="footer">  
+
+      <input type="button" value="Add new movie" id="add-movie"></input>
+      <input type="button" value="Next" class='button-next' onclick="switchGame()"></input>
+      <span class='tips'>Make sure to pick at least 5 movies for the best experience</span>
+    </footer>
+    
+  </div>
+
+  <main id="library-content">
+  <h1 id="logo"><i class="theme-movies">Movies that you've seen</i></h1>
+    <div id="library-info">   
+      <p>Movies seen: <span id="movies-seen"></span></p>
+      <p>Movies liked: <span id="movies-liked"></span></p>
+      <p>Movies disliked: <span id="movies-disliked"></span></p>
+      <button type="button" id="delete-all-btn">CLEAR ALL</button>
+    </div>
+
+    <div class="scrollable">
+    <table id="movies-list">
+      <thead id="requirements">
+        <tr name = 'main' class='title-row'>
+          <td class='title-row'>TITLE</td>
+          <td class='title-row'>ENJOYMENT</td>
+          <td class='title-row'>DELETE</td>
+        </tr>
+        <br>
+      </thead>
+      <tbody id="table-body">
+        <!-- Movies generated  -->
+      </tbody>
+    </table>
+</div>
+
+    <div id="modal" class="close">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2>Confirmation</h2>
+          <span class="close-modal close">&times;</span>
+        </div>
+        <div class="modal-content">
+          <p>Do you really want to delete all the movies?</p>
+          <div class="modal-options">
+            <button type="button" class="cancel-removal close">Cancel</button>
+            <button type="button" class="confirm-removal">DELETE ALL</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  
+    <div id='gameWrapper' hidden>
+
+      <div id='game-view'>
+      
+          <div id="game-card">
+              <div class="game-content">
+                <p>Click below to start the game</p>
+                <div class="game-options">
+                  <button type="button" onclick='toggleDisplay()' id='start-btn'>Start</button>
+                </div>
+              </div>
+            </div>
+      
+      
+      <div id='hideall' hidden>
+      
+      
+      <div id='question-wrap'>
+    
+      
+      <div id='question-div'>
+          <span id='qspan'> </span>
+      
+      </div>
+      
+      <div id='answers-div'>
+          <span id ='aspan'> </span>
+      
+      </div>
+      
+  
+      <div id='input-div'>
+      
+          
+          <span id='imdbspan'></span>
+      
+          <div id='slider'>
+              <input type="range" min="0" max="10" step="0.1" id='imdbslider'></input>
+
+      
+      </div>
+      
+      <div id='nextPopup'>
+          <input type='button' id='submit' value='Submit'></input>
+          <input type='button' id='nextPop' value='Next'></input>
+      </div>
+      
+      <div id='results-div' hidden>
+        <span>You were wrong this many times: </span>
+      <span id='incor'></span>
+      <br>
+      <span>You were right this many times: </span>
+      <span id='corr'></span>
+          
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </main>
+  <script type="text/javascript" src="scripts.js"></script>
+
+</body>
+
+</html>
